@@ -70,16 +70,129 @@
   </header>
   
   <section id="js-article" class="p-article__body">
-    <h1 id="task-description">Task Description</h1>
+    <p>While deep generative models have empowered music generation, it remains a challenging and under-explored problem to edit an existing musical piece at fine granularity. In this paper, we propose SDMuse, a unified stochastic differential music editing and generation framework, which can not only compose a whole musical piece from scratch, but also modify existing musical pieces in many ways, such as combination, continuation, inpainting, and style transferring. SDMuse is based on a diffusion model generative prior, synthesizing a musical piece by iteratively denoising through a stochastic differential equation.
+Considering the pianoroll and MIDI-event are suitable for editing and modeling respectively, we design a two-stage pipeline, including pianoroll and MIDI-event generation, which takes advantage of two kinds of symbolic music representations (we call it hybrid representation).
+We evaluate the generated music of our method on ailabs1k7 pop music dataset in terms of quality and controllability on various music editing and generation tasks. Experimental results demonstrate the effectiveness of our proposed stochastic differential music editing and generation process, as well as the hybrid representations.</p>
 <h1 id="generation-from-scratch">Generation from Scratch</h1>
+<table>
+<tr height="100">
+    <td style="text-align: center"><b>REMI</b></td>
+    <td style="text-align: center"><audio controls="controls" ><source src="/audios/remi/600_6_cut.mp3" autoplay/>Your browser does not support the audio element.</audio></td>
+    <td style="text-align: center"><audio controls="controls" ><source src="/audios/remi/600_8_cut.mp3" autoplay/>Your browser does not support the audio element.</audio></td>
+</tr>
+<tr height="100">
+    <td style="text-align: center"><b>CPW</b></td>
+    <td style="text-align: center"><audio controls="controls" ><source src="/audios/cpw/pred_4_cut.mp3" autoplay/>Your browser does not support the audio element.</audio></td>
+    <td style="text-align: center"><audio controls="controls" ><source src="/audios/cpw/pred_7_cut.mp3" autoplay/>Your browser does not support the audio element.</audio></td>
+</tr>
+<tr height="100">
+    <td style="text-align: center"><b>SDMuse<br><small>(unconditioned)</small></b></td>
+    <td style="text-align: center"><audio controls="controls" ><source src="/audios/uncond/989_4_cut.mp3" autoplay/>Your browser does not support the audio element.</audio></td>
+    <td style="text-align: center"><audio controls="controls" ><source src="/audios/uncond/989_0_cut.mp3" autoplay/>Your browser does not support the audio element.</audio></td>
+</tr>
+<tr height="100">
+    <td style="text-align: center"><b>SDMuse<br><small>(conditioned)</small></b></td>
+    <td style="text-align: center"><audio controls="controls" ><source src="/audios/cond_word/989_4_cut.mp3" autoplay/>Your browser does not support the audio element.</audio></td>
+    <td style="text-align: center"><audio controls="controls" ><source src="/audios/cond_word/989_8_cut.mp3" autoplay/>Your browser does not support the audio element.</audio></td>
+</tr>
+</table>
 <h1 id="fine-grained-editing">Fine-grained Editing</h1>
-<h2 id="stroke-based-generation">Stroke-based Generation</h2>
-<h2 id="stroke-based-editing">Stroke-based Editing</h2>
-<h2 id="inpainting">Inpainting</h2>
-<h2 id="outpainting">Outpainting</h2>
-<h2 id="combination">Combination</h2>
-<h2 id="style-transfer">Style Transfer</h2>
+<p>Update soon.</p>
+<!-- ## Stroke-based Generation
+<table>
+<thead>
+	<td style="text-align: center"><b>Input</b></td>
+	<td style="text-align: center"><b>Mask</b></td>
+	<td style="text-align: center"><b>Pianoroll</b></td>
+	<td style="text-align: center"><b>Audio</b></td>
+</thead>
+<tr height="100">
+    <td style="text-align: center"><img src=""></td>
+    <td style="text-align: center"><img src=""></td>
+    <td style="text-align: center"><img src=""></td>
+    <td style="text-align: center"><audio controls="controls" ><source src="/audios/stroke/" autoplay/>Your browser does not support the audio element.</audio></td>
+</tr>
+</table>
 
+## Stroke-based Editing
+<table>
+<thead>
+	<td style="text-align: center"><b>Input</b></td>
+	<td style="text-align: center"><b>Mask</b></td>
+	<td style="text-align: center"><b>Pianoroll</b></td>
+	<td style="text-align: center"><b>Audio</b></td>
+</thead>
+<tr height="100">
+    <td style="text-align: center"><img src=""></td>
+    <td style="text-align: center"><img src=""></td>
+    <td style="text-align: center"><img src=""></td>
+    <td style="text-align: center"><audio controls="controls" ><source src="/audios/edit/" autoplay/>Your browser does not support the audio element.</audio></td>
+</tr>
+</table>
+
+## Inpainting
+<table>
+<thead>
+	<td style="text-align: center"><b>Input</b></td>
+	<td style="text-align: center"><b>Mask</b></td>
+	<td style="text-align: center"><b>Pianoroll</b></td>
+	<td style="text-align: center"><b>Audio</b></td>
+</thead>
+<tr height="100">
+    <td style="text-align: center"><img src=""></td>
+    <td style="text-align: center"><img src=""></td>
+    <td style="text-align: center"><img src=""></td>
+    <td style="text-align: center"><audio controls="controls" ><source src="/audios/inpainting/" autoplay/>Your browser does not support the audio element.</audio></td>
+</tr>
+</table>
+
+## Outpainting
+<table>
+<thead>
+	<td style="text-align: center"><b>Input</b></td>
+	<td style="text-align: center"><b>Mask</b></td>
+	<td style="text-align: center"><b>Pianoroll</b></td>
+	<td style="text-align: center"><b>Audio</b></td>
+</thead>
+<tr height="100">
+    <td style="text-align: center"><img src=""></td>
+    <td style="text-align: center"><img src=""></td>
+    <td style="text-align: center"><img src=""></td>
+    <td style="text-align: center"><audio controls="controls" ><source src="/audios/outpainting/" autoplay/>Your browser does not support the audio element.</audio></td>
+</tr>
+</table>
+
+## Combination
+<table>
+<thead>
+	<td style="text-align: center"><b>Input</b></td>
+	<td style="text-align: center"><b>Mask</b></td>
+	<td style="text-align: center"><b>Pianoroll</b></td>
+	<td style="text-align: center"><b>Audio</b></td>
+</thead>
+<tr height="100">
+    <td style="text-align: center"><img src=""></td>
+    <td style="text-align: center"><img src=""></td>
+    <td style="text-align: center"><img src=""></td>
+    <td style="text-align: center"><audio controls="controls" ><source src="/audios/combination/" autoplay/>Your browser does not support the audio element.</audio></td>
+</tr>
+</table>
+
+## Style Transfer
+<table>
+<thead>
+	<td style="text-align: center"><b>Input</b></td>
+	<td style="text-align: center"><b>Mask</b></td>
+	<td style="text-align: center"><b>Pianoroll</b></td>
+	<td style="text-align: center"><b>Audio</b></td>
+</thead>
+<tr height="100">
+    <td style="text-align: center"><img src=""></td>
+    <td style="text-align: center"><img src=""></td>
+    <td style="text-align: center"><img src=""></td>
+    <td style="text-align: center"><audio controls="controls" ><source src="/audios/style/" autoplay/>Your browser does not support the audio element.</audio></td>
+</tr>
+</table> -->
   </section>
   <footer>
     

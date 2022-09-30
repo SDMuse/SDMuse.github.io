@@ -14,7 +14,7 @@
       <pubDate>Sat, 24 Sep 2022 17:44:16 +0800</pubDate>
       
       <guid>https://SDMuse.github.io/posts/sdmuse/</guid>
-      <description>Task Description Generation from Scratch Fine-grained Editing Stroke-based Generation Stroke-based Editing Inpainting Outpainting Combination Style Transfer </description>
+      <description>While deep generative models have empowered music generation, it remains a challenging and under-explored problem to edit an existing musical piece at fine granularity. In this paper, we propose SDMuse, a unified stochastic differential music editing and generation framework, which can not only compose a whole musical piece from scratch, but also modify existing musical pieces in many ways, such as combination, continuation, inpainting, and style transferring. SDMuse is based on a diffusion model generative prior, synthesizing a musical piece by iteratively denoising through a stochastic differential equation.</description>
     </item>
     
   </channel>
